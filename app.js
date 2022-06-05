@@ -2,6 +2,7 @@ var express = require('express');
 var mysql = require('mysql');
 
 var app = express();
+app.use(express.json());
 
 var connection = mysql.createConnection({
     host     : 'localhost',
@@ -47,6 +48,19 @@ app.get('/api/articulos/:id',(req,res)=>{
             */ 
         }
     })
+});
+
+// Crear
+app.post('/api/articulos', (req,res)=>{
+    let data = {descripcion:req.body.descripcion, precio:req.body.precio, stock:req.body.stock};
+    let sql = "INSERT INTO articulos SET ?";
+    connection.query(sql,data,function(error, results){
+        if (error) {
+            throw error;
+        } else {
+            res.send(results);
+        }
+    });
 });
 
 // in case port is occupied
