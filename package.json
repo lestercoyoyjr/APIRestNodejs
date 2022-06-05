@@ -1,0 +1,24 @@
+{
+  "name": "apirestnodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lestercoyoyjr/APIRestNodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lestercoyoyjr/APIRestNodejs/issues"
+  },
+  "homepage": "https://github.com/lestercoyoyjr/APIRestNodejs#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql": "^2.18.1"
+  }
+}
