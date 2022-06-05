@@ -63,6 +63,22 @@ app.post('/api/articulos', (req,res)=>{
     });
 });
 
+// Editar
+app.put('/api/articulos/:id', (req, res)=>{
+    let id = req.params.id;
+    let descripcion = req.body.descripcion;
+    let precio = req.body.precio;
+    let stock = req.body.stock;
+    let sql = "UPDATE articulos SET descripcion = ?, precio = ?, stock = ? WHERE id = ?";
+    connection.query(sql,[descripcion, precio, stock, id], function(error, results){
+        if (error) {
+            throw error;
+        } else {
+            res.send(results);
+        }
+    });
+})
+
 // in case port is occupied
 const puerto = process.env.PUERTO;
 
